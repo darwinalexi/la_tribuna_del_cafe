@@ -4,7 +4,7 @@ from fastapi import HTTPException, File, UploadFile
 from datetime import date
 import os
 
-DIR_IMG="public/img"
+DIR_IMG="public/img/coffe"
 def get_coffe_by_estate(id_estate: int):
     try:
         connection= get_connection()
@@ -113,8 +113,7 @@ def update_coffe(coffe: Coffe, img: UploadFile = File(None), id_coffe:int= None,
             id_archivo= data["id_archivo"]
             ruta_fisica= os.path.join(DIR_IMG, nombre_archivo)
             os.remove(ruta_fisica)
-            print("Archivo anta" \
-"erior eliminado:", nombre_archivo)
+            print("Archivo antaerior eliminado:", nombre_archivo)
 
             cursor.execute("delete from archivos where id=%s",(id_archivo,))
             connection.commit()

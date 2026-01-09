@@ -6,7 +6,7 @@ from src.models.model_estate import Estate
 import os
 
 TYPE_FILE=["application/pdf"]
-DIRECTORY_FILE="public/docs"
+DIRECTORY_FILE="public/docs/estate"
 MAX_FILE_SIZE = 1 * 1024 * 1024  
 
 def read_estate_of_user(user_id: int):
